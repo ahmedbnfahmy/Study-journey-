@@ -8,6 +8,7 @@ Usage: ./git-auto-push.sh [options]
 Default behavior:
   - Stages all changes (including new files),
   - Commits them with the current timestamp message,
+  - Pulls with rebase from your configured upstream (to reduce conflicts),
   - Then pushes your current branch to its configured upstream (e.g. origin/master).
   - Skips committing if the working tree isn't dirty.
 
@@ -40,6 +41,17 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
+# Resolve upstream early so we know where to pull from.
+UPSTREAM_REF="$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}" 2>/dev/null || true)"
+if [[ -z "$UPSTREAM_REF" ]]; then
+  echo "No upstream configured for the current branch."
+  echo "Set it with: git push -u origin HEAD" >&2
+  exit 1
+fi
+
+REMOTE="${UPSTREAM_REF%%/*}"  # origin
+BRANCH="${UPSTREAM_REF#*/}"  # main (or similar)
+
 # If your working tree is dirty, pushing won't include those changes anyway.
 if [[ -n "$(git status --porcelain)" ]]; then
   if [[ "$AUTO_COMMIT" -ne 1 ]]; then
@@ -62,15 +74,10 @@ if [[ -n "$(git status --porcelain)" ]]; then
   fi
 fi
 
-UPSTREAM_REF="$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}" 2>/dev/null || true)"
-if [[ -z "$UPSTREAM_REF" ]]; then
-  echo "No upstream configured for the current branch."
-  echo "Set it with: git push -u origin HEAD" >&2
-  exit 1
+if [[ "$DRY_RUN" -eq 0 ]]; then
+  # Rebase onto upstream to keep history linear and reduce "push rejected" situations.
+  git pull --rebase "$REMOTE" "$BRANCH"
 fi
-
-REMOTE="${UPSTREAM_REF%%/*}"  # origin
-BRANCH="${UPSTREAM_REF#*/}"  # main (or similar)
 
 if [[ "$DRY_RUN" -eq 1 ]]; then
   git push --dry-run "$REMOTE" "$BRANCH"
