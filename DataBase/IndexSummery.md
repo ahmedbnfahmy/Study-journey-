@@ -1,8 +1,4 @@
-# Database indexes — master summary
-
-Single reference merging: Tech Vault (B/B+, Q&A, hash/composite) and PostgreSQL indexing notes (Hussein Nasser). Use section **Sources** at the end for original links and videos.
-
----
+# Database indexes 
 
 ## 1. What an index is
 
