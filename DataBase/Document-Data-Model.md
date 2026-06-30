@@ -1,6 +1,6 @@
 # Document Data Model — Study Guide
 
-**What this covers:** How document databases (e.g. MongoDB, Couchbase) model data, when they beat relational tables, and how to **link** records (**embed** vs **reference**). Includes a full **design workflow** (requirements → representation → physical design).
+**What this covers:** How document databases (e.g. MongoDB, Couchbase) model data, when they beat relational tables, and how to **link** records (**embed** vs **reference**). Includes a full **design workflow** (requirements → representation → physical design) and **MongoDB aggregation** pipelines.
 
 ---
 
@@ -282,6 +282,73 @@ After logical design, before loading data:
 
 ---
 
+## Part 3 — MongoDB Aggregation
+
+Framework for data processing — transform, analyze, and reshape data before it returns to your application.
+
+### The pipeline concept
+
+| Step | Description |
+| :--- | :--- |
+| **Input** | Raw documents |
+| **Stages** | A series of operations (filtering, grouping, sorting) |
+| **Output** | Final result — often a completely new data shape |
+
+```javascript
+db.collection.aggregate([
+  { stage1 },
+  { stage2 },
+  { stage3 }
+])
+```
+
+### Stages vs SQL
+
+| Stage | SQL Equivalent | Description |
+| :--- | :--- | :--- |
+| `$match` | `WHERE` | Filters documents. Only matches pass to the next stage. |
+| `$group` | `GROUP BY` | Groups docs by a specific `_id` and calculates totals (sum, avg). |
+| `$project` | `SELECT` | Selects specific fields to keep, rename, or calculate. |
+| `$sort` | `ORDER BY` | Orders documents (`1` ascending, `-1` descending). |
+| `$limit` | `LIMIT` | Limits the number of resulting documents. |
+| `$unwind` | N/A | Deconstructs an array field — one output document per element. |
+| `$lookup` | `LEFT JOIN` | Joins data from another collection. |
+
+### Common workflow pattern
+
+Typical advanced pipeline flow:
+
+1. **`$match`** — filter early to reduce workload
+2. **`$lookup`** — bring in related data
+3. **`$unwind`** — flatten joined data (if you need to filter related data)
+4. **`$group`** — calculate statistics
+5. **`$project`** — clean up final JSON for the frontend
+
+### `$lookup` (joins)
+
+```javascript
+db.users.aggregate([
+  {
+    $lookup: {
+      from: "orders",           // target collection name in DB
+      localField: "_id",        // field in 'users' collection
+      foreignField: "userId",   // field in 'orders' collection
+      as: "userOrders"          // name of the new output array
+    }
+  }
+])
+```
+
+**Tie-in to Part 2:** When you chose **referencing** over embedding, `$lookup` is how you join related collections at query time — the document-DB equivalent of a SQL `LEFT JOIN`.
+
+### Part 3 — One-minute recap
+
+1. Aggregation is a **pipeline** of stages; each stage transforms documents passed to the next.
+2. **`$match` early** to reduce work; **`$lookup`** for referenced data across collections.
+3. Map stages to SQL mentally (`$match` = `WHERE`, `$group` = `GROUP BY`, `$lookup` = `LEFT JOIN`).
+
+---
+
 ## Decision cheat sheet (exam-style)
 
 ```
@@ -346,7 +413,7 @@ Is shared data updated often?
 
 ## Related topics (study later)
 
-- MongoDB query operators and aggregation
+- MongoDB query operators (find / filter syntax beyond aggregation)
 - Index types and query plans on document stores
 - Transactions and consistency in document DBs
 - Sharding and replication in depth

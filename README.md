@@ -7,7 +7,7 @@ Personal notes and summaries from courses, books, and videos — organized by to
 | Area | Index | Highlights |
 | :--- | :--- | :--- |
 | **Backend** | [Backend-Concepts.md](./Backend/Backend-Concepts.md) | REST API, CORS, middleware vs interceptors, [authentication](./Backend/7-Authentication-Concepts.md) |
-| **Database** | [DB-Summery.md](./DataBase/DB-Summery.md) | Indexing, partitioning, joins, normalization, [ACID](./DataBase/ACID.md), [MongoDB aggregation](./DataBase/MongoDB-Aggregation.md) |
+| **Database** | [DB-Summery.md](./DataBase/DB-Summery.md) | Indexing, partitioning, joins, normalization, [ACID](./DataBase/ACID.md), [document data model & MongoDB aggregation](./DataBase/Document-Data-Model.md) |
 | **Data Structures** | [Data-Structures.md](./Data-Structures/Data-Structures.md) | Arrays, trees, graphs, [practice problems](./Data-Structures/Problems.md) |
 | **Engineering** | [Engineering-Topics.md](./Engineering/Engineering-Topics.md) | [SOLID](./Engineering/SOLID-Principles.md), [design patterns](./Engineering/design-patterns-summary.md) |
 | **Frontend** | [FrontEnd-Topics.md](./FrontEnd/FrontEnd-Topics.md) | [React](./FrontEnd/React/React.md), [Angular](./FrontEnd/Angular/Angular.md) |
