@@ -70,10 +70,14 @@ Source: https://github.com/leonardomso/33-js-concepts/blob/master/docs/concepts/
 
 ### Decorator Pattern
 
-- Attaches new behavior to objects by wrapping them.
+**Structural design pattern** — attaches new behaviors to objects by placing them inside special wrapper objects that contain the behaviors.
+
+**Analogy:** Wearing clothes. When you're cold, you wrap yourself in a sweater. Still cold? Add a jacket. Raining? Put on a raincoat. Each garment extends your basic behavior but isn't part of you — and you can take any piece off when you don't need it.
+
 - Works well with objects and functions in JavaScript.
 - Supports composition and adding cross-cutting concerns like logging or caching.
 - Use when you want to extend behavior without modifying the original object.
+- In Angular, `@Component`, `@Injectable`, etc. are **TypeScript decorators** — metadata wrappers applied to classes (related concept, different mechanism).
 
 ## Common Mistakes
 
