@@ -206,6 +206,24 @@ Relational database — widely used for web apps, e-commerce, and transactional 
 
 ---
 
+## MySQL vs PostgreSQL
+
+Both are open-source relational databases that support SQL, ACID transactions, indexes, replication, stored procedures, and JSON.
+
+| | **MySQL** | **PostgreSQL** |
+| :--- | :--- | :--- |
+| **Focus** | Simplicity and common web workloads | Correctness, extensibility, and complex workloads |
+| **SQL compliance** | Supports core SQL with some MySQL-specific behavior | More closely follows SQL standards |
+| **Data types** | Strong support for common relational types and JSON | Rich types including arrays, ranges, `JSONB`, and custom types |
+| **Complex queries** | Good for straightforward read-heavy and transactional workloads | Strong for complex queries, analytics, and concurrent writes |
+| **Extensibility** | Plugins and configurable storage engines | Custom types, operators, functions, and extensions such as PostGIS |
+| **Full outer join** | No native `FULL OUTER JOIN` | Native `FULL OUTER JOIN` support |
+| **Typical use** | Web apps, e-commerce, and systems already using the MySQL ecosystem | Data-heavy applications, geospatial systems, analytics, and complex business logic |
+
+**General choice:** PostgreSQL is often the stronger default for new applications because of its richer features and stricter data handling. MySQL remains a good choice when the team, hosting, or existing infrastructure already relies on its ecosystem.
+
+---
+
 ## Non-Relational (NoSQL) Databases
 
 No fixed schema — flexible data models that adapt to changing structures.

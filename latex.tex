@@ -1,0 +1,191 @@
+% REFERENCE TEMPLATE — keep size, fonts, spacing, and Deedy layout as-is.
+% Prefer editing content here (or copies of this file), not the article-class CV.
+\documentclass[]{deedy-resume-reversed}
+\usepackage{fancyhdr}
+\usepackage{paracol}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\begin{document}
+
+\namesection{\huge Ahmed Fahmy Mohammed}{
+  \textbullet{} \texttt{\href{tel:+201062343336}{{\bf 01062343336}}}  \textbullet{}
+    \href{mailto:ahmedbnfahmy@gmail.com}{\bf ahmedbnfahmy@gmail.com} \textbullet{}
+    \href{https://github.com/ahmedbnfahmy}{\bf github.com/ahmedbnfahmy} \textbullet{}
+   \href{https://www.upwork.com/freelancers/~01590d56b6a2b15e61}{\bf Upwork} \textbullet{}
+    \href{https://www.linkedin.com/in/ahmedbnfahmy/}{\bf LinkedIn}
+}
+\vspace{-4pt}
+\begin{center}
+\small \textbf{Full-Stack Developer} with 5+ years of experience designing and delivering scalable web applications, SaaS platforms, and AI-powered products. Proficient across the full stack with \textbf{React, Next.js, Angular, Node.js, and NestJS} --- focused on clean architecture, performance, and reliable delivery.
+\end{center}
+\vspace{-6pt}
+
+\columnratio{0.62}
+\begin{paracol}{2}
+
+\section{Experience}
+
+\runsubsection{\href{https://shareecoin.com/}{ShareeCoin}}
+\location{| Full-Stack Developer | Mar 2024 -- Present}
+\vspace{2pt}
+\begin{tightemize}
+\item Optimized and developed responsive client-facing applications using \textbf{React} and \textbf{Next.js}, improving performance, SEO, and UX through SSR, lazy loading, code splitting, and modern frontend techniques, including responsive \textbf{RTL (Arabic)} dashboards built with \textbf{Tailwind CSS}.
+\item Architected scalable backend services with \textbf{Node.js}, \textbf{NestJS}, and \textbf{Express}, delivering robust RESTful APIs and reusable middleware components.
+\item Secured multi-tenant access control by integrating \textbf{Keycloak IAM} with token refresh flows and role-based route guards.
+\item Reduced API latency and improved scalability by introducing \textbf{Redis} distributed caching and \textbf{RabbitMQ} asynchronous messaging.
+\item Managed \textbf{MongoDB} and \textbf{MySQL} databases with a focus on query optimization and maintainable data architecture.
+\item Maintained production reliability through \textbf{Jest} automated testing and zero-downtime deployments on \textbf{Linux Ubuntu}.
+\end{tightemize}
+\vspace{6pt}
+
+\runsubsection{\href{https://verdikt.wessini.co/sign-in}{Wessini Verdickt}}
+\location{| Full-Stack / AI Developer (Freelance | Upwork) | Sep 2025 -- Feb 2026}
+\vspace{2pt}
+\begin{tightemize}
+\item Contributed to a production AI chatbot by working with \textbf{LangGraph} to support agent orchestration and stateful multi-step workflows.
+\item Worked on the document processing pipeline to handle multi-format uploads including \textbf{PDF, Images, and DocX} using \textbf{LangChainJS}, expanding ingestion capability by \textbf{3x}.
+\item Helped improve \textbf{RAG} retrieval quality by applying \textbf{Vector Search} with SimScore filtering to increase answer relevance and precision.
+\item Gained hands-on experience integrating \textbf{Neo4j GraphCypher} for structured knowledge retrieval alongside unstructured vector data.
+\item Assisted in managing deployments and feature releases on \textbf{AWS Amplify} using \textbf{GitHub Actions} CI/CD pipelines.
+\end{tightemize}
+\vspace{6pt}
+
+\runsubsection{\href{https://checkmehealth.com/en-US/\#/}{\text{Check Me}}}
+\location{| Full-Stack Developer | Mar 2023 -- Mar 2024}
+\vspace{2pt}
+\begin{tightemize}
+\item Developed and maintained full-stack B2B SaaS applications using \textbf{Angular} for the frontend and \textbf{Node.js, NestJS} for the backend, serving hundreds of active business users.
+\item Integrated and optimized \textbf{REST APIs} with pagination, filtering, and robust error handling, reducing frontend-reported API issues by \textbf{40\%}.
+\item Improved database query performance on \textbf{MongoDB} and \textbf{MySQL}, reducing response times for high-traffic endpoints.
+\item Managed \textbf{Azure}-hosted production applications with zero-downtime deployments and strong \textbf{Jest} test coverage.
+\end{tightemize}
+\vspace{6pt}
+
+\runsubsection{IVoisUp}
+\location{| Front-end Developer (Part-time) | Feb 2021 -- Mar 2023}
+\vspace{2pt}
+\begin{tightemize}
+\item Delivered a custom client-facing web application on a tight deadline using \textbf{Angular} and \textbf{React}, tailored to a client-specific business workflow and use case.
+\item Built responsive, reusable UI components with \textbf{TypeScript}, \textbf{JavaScript (ES6+)}, \textbf{HTML5}, and \textbf{CSS3/SCSS (Sass)}, applying \textbf{Bootstrap} for consistent layout and mobile-first design.
+\item Developed interactive front-end features including dynamic forms, validation, and user-driven workflows using \textbf{RxJS} and component-driven architecture.
+\item Styled complex UI screens with \textbf{Sass} (variables, mixins, modular stylesheets) and Bootstrap utilities for a polished, brand-aligned interface.
+\item Integrated \textbf{REST APIs} on the front end, handling loading states, error feedback, and data binding for a reliable client experience.
+\item Designed UI layouts and prototypes in \textbf{Figma} and prepared visual assets in \textbf{Photoshop}, then implemented them as pixel-accurate front-end screens.
+\item Ensured cross-browser compatibility and accessibility basics while iterating on UI/UX feedback with the client.
+\end{tightemize}
+
+\switchcolumn
+
+\section{Education}
+
+\subsection{Azhar-University}
+\location{Bachelor of Science}
+\location{Graduated 2020}
+\sectionsep
+
+\subsection{ITI-Diploma}
+\location{MEARN Stack}
+\location{Graduated 2023}
+\sectionsep
+
+\section{Skills}
+
+\subsection{Front-End}
+React JS \textbullet{} Next.js \textbullet{} Angular \\
+TypeScript \textbullet{} JavaScript \\
+Tailwind \textbullet{} CSS/SCSS \\
+Redux \textbullet{} RxJS \textbullet{} Bootstrap \\
+RTL / Arabic UI \\
+Figma \textbullet{} Photoshop
+\sectionsep
+
+\subsection{Back-End}
+NodeJS \textbullet{} NestJS \textbullet{} Express.js \\
+Laravel \textbullet{} PHP \textbullet{} RESTful API \\
+GraphQL (Apollo) \textbullet{} Sails.JS
+\sectionsep
+
+\subsection{AI/LLM}
+LangChainJS \textbullet{} LangGraph \\
+RAG Pipelines \textbullet{} Vector Search \\
+Neo4j \textbullet{} LangSmith
+\sectionsep
+
+\subsection{Databases}
+MongoDB \textbullet{} MySQL \textbullet{} PostgreSQL \\
+Redis \textbullet{} Neo4j (Graph DB)
+\sectionsep
+
+\subsection{ORMs}
+Sequelize \textbullet{} Mongoose \textbullet{} TypeORM
+\sectionsep
+
+\subsection{Infrastructure}
+Docker \textbullet{} NGINX \\
+GitHub Actions (CI/CD) \\
+RabbitMQ \textbullet{} Keycloak \\
+Linux Ubuntu \textbullet{} Azure
+\sectionsep
+
+\subsection{Testing}
+Jest \textbullet{} Jasmine
+\sectionsep
+
+\subsection{Tools}
+Git \textbullet{} GitHub \textbullet{} Jira \\
+ClickUp \textbullet{} Trello \textbullet{} VS Code
+\sectionsep
+
+\subsection{Languages}
+Arabic (Native) \\
+English (Professional)
+\sectionsep
+
+\end{paracol}
+
+\section{Projects}
+
+\runsubsection{\href{https://github.com/ahmedbnfahmy/Mini-shop}{Mini Shop}}
+\location{| Full-Stack Developer}
+\vspace{2pt}
+\begin{tightemize}
+\item Built a complete end-to-end \textbf{Mini Shop} system comprising a \textbf{React Native (Expo)} mobile app, a \textbf{Node.js/Fastify} REST API, and a \textbf{React (Vite)} admin dashboard --- all in \textbf{TypeScript}.
+\item Implemented full auth flows with \textbf{Supabase Auth}: registration, login, forgot-password email reset, JWT stored in \textbf{Expo SecureStore} with auto-logout on expiry.
+\item Designed a polished mobile UI featuring a product catalogue with search \& category filters, a cart with quantity controls, order placement, and order history with status badges.
+\item Enforced \textbf{role-based access control} (customer vs.\ admin) via \textbf{Supabase RLS} and JWT role claims; product images stored in \textbf{Supabase Storage}.
+\item Validated all API routes with \textbf{Zod}; built an admin dashboard with KPI cards, product management (create/edit/toggle), and paginated order management with real-time status updates.
+\item Tech stack: \textbf{Expo SDK, React Native, Node.js, Fastify, React (Vite), Tailwind CSS, Supabase (PostgreSQL + Auth + Storage), TypeScript, GitHub Actions}
+\end{tightemize}
+\vspace{6pt}
+
+\runsubsection{E-Commerce Platform (ScandiWeb)}
+\location{| Full-Stack Developer}
+\vspace{2pt}
+\begin{tightemize}
+\item Built a high-performance \textbf{React} (TypeScript) frontend with \textbf{Context API} state management, achieving \textbf{95+ Lighthouse} performance scores.
+\item Developed and maintained \textbf{GraphQL (Apollo)} APIs on a \textbf{PHP 8.2} backend with a clean, scalable architecture.
+\item Automated testing and staging deployments through \textbf{Dockerized CI/CD pipelines} powered by \textbf{GitHub Actions}.
+\item Tech stack: \textbf{React, TypeScript, PHP 8.2, GraphQL, MySQL 8, Docker, GitHub Actions, Railway}
+\end{tightemize}
+\vspace{6pt}
+
+\runsubsection{MKA License Renewal System (Aman Company)}
+\location{| Backend Developer}
+\vspace{2pt}
+\begin{tightemize}
+\item Engineered and deployed optimized \textbf{RESTful APIs} with secure authentication, improving traffic license renewal efficiency for a government-adjacent client.
+\item Implemented secure \textbf{JWT} authentication, input validation middleware, and optimized database indexing to handle concurrent renewal requests safely and efficiently.
+\item Tech stack: \textbf{Node.js (Express), NestJS, MySQL, Sequelize ORM, JWT, Redis, Git, Linux (Ubuntu)}
+\end{tightemize}
+
+\vspace{8pt}
+\hrulefill
+\begin{center}
+    \footnotesize \color{gray}
+    Last updated on \today
+\end{center}
+
+\end{document}
